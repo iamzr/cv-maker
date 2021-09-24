@@ -5,7 +5,7 @@ class Skills extends Component {
   renderDivs(object) {
     let divs = [];
     for (let key in object) {
-      divs.push(<SkillsItem experience={object[key]}></SkillsItem>);
+      divs.push(<SkillsItem skills={object[key]}></SkillsItem>);
     }
     return divs;
   }

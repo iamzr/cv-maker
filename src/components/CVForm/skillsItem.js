@@ -2,12 +2,11 @@ import { Component } from "react";
 
 class SkillsItem extends Component {
   render() {
+    const { updateState } = this.props;
     return (
       <div className="form-section">
         <label htmlFor="skill">Skill:</label>
-        <input name="skill1" onChange={this.updateState}></input>
-        <label htmlFor="skill2">Skill:</label>
-        <input name="skill2" onChange={this.updateState}></input>
+        <input name="skill" onChange={updateState}></input>
       </div>
     );
   }
