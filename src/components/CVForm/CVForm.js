@@ -66,12 +66,20 @@ class CVForm extends Component {
           ></input>
           <label htmlFor="endDate">End Date</label>
           <input name="endDate" type="date" onChange={this.updateState}></input>
+          <label htmlFor="text">Details</label>
+          <input
+            name="text"
+            type="textarea"
+            onChange={this.updateState}
+          ></input>
 
           <h2>Education</h2>
-          <label htmlFor="degree">Degree</label>
-          <input name="degree" onChange={this.updateState}></input>
-          <label htmlFor="university">University</label>
-          <input name="university" onChange={this.updateState}></input>
+          <label htmlFor="institute">Institution</label>
+          <input name="institute" onChange={this.updateState}></input>
+          <label htmlFor="qual">Qualification</label>
+          <input name="qual" onChange={this.updateState}></input>
+          <label htmlFor="grade">Grade</label>
+          <input name="grade" onChange={this.updateState}></input>
           <label htmlFor="startDate">Start Date</label>
           <input
             name="startDate"

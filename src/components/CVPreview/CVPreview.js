@@ -14,7 +14,7 @@ class CVPreview extends Component {
     }
 
     return (
-      <div className="Preview">
+      <div className="preview">
         <div className="header">
           <div className="title">
             {data.firstName} {data.lastName}
@@ -27,7 +27,32 @@ class CVPreview extends Component {
 
         <div className="section">
           <div className="heading">Experience</div>
-          <div>{data.jobTitle}</div>
+          <div className="line1">
+            <div>{data.jobTitle}</div>
+            <div className="dates">
+              {data.startDate} - {data.endDate}
+            </div>
+          </div>
+          <div className="line2">
+            <div>{data.company}</div>
+          </div>
+          <ul className="line3">
+            <li>{data.text}</li>
+          </ul>
+        </div>
+
+        <div className="section">
+          <div className="heading">Education</div>
+          <div className="line1">
+            <div>{data.institute}</div>
+            <div className="dates">
+              {data.startDate} - {data.endDate}
+            </div>
+          </div>
+          <div className="line3">
+            <div>{data.qual}</div>
+            <div>{data.grade}</div>
+          </div>
         </div>
       </div>
     );

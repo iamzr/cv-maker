@@ -1,6 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 .preview {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding: 1em;
 }
 
 .header {
@@ -14,6 +20,7 @@
   font-size: 2em;
 }
 
+/* Section */
 .section {
   display: block;
   width: 100%;
@@ -26,4 +33,23 @@
   font-size: 1.5em;
   padding-bottom: 2px;
   border-bottom: 1px solid black;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.line1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dates {
+  font-style: italic;
+}
+
+.line2 {
+  font-style: italic;
+}
+
+.line3 {
+  padding-top: 0.5em;
 }
