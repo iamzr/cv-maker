@@ -2,12 +2,15 @@ import "./CVForm.css";
 import React, { Component } from "react";
 import CVPreview from "../CVPreview/CVPreview";
 import Personal from "./personal";
+import Experience from "./experience";
 
 class CVForm extends Component {
   constructor(props) {
     super(props);
 
     this.state = {};
+
+    this.updateState = this.updateState.bind(this);
   }
 
   updateState = (e) => {
@@ -20,33 +23,8 @@ class CVForm extends Component {
     return (
       <div className="cv-form">
         <form>
-          <Personal></Personal>
-          <div className="form-section">
-            <h2>Experience</h2>
-            <label htmlFor="jobTitle">Job Title</label>
-            <input name="jobTitle" onChange={this.updateState}></input>
-            <label htmlFor="company">Company</label>
-            <input name="company" onChange={this.updateState}></input>
-            <label htmlFor="startDate">Start Date</label>
-            <input
-              name="startDate"
-              type="date"
-              onChange={this.updateState}
-            ></input>
-            <label htmlFor="endDate">End Date</label>
-            <input
-              name="endDate"
-              type="date"
-              onChange={this.updateState}
-            ></input>
-            <label htmlFor="text">Details</label>
-            <input
-              name="text"
-              type="textarea"
-              onChange={this.updateState}
-            ></input>
-          </div>
-
+          <Personal updateState={this.updateState}></Personal>
+          <Experience updateState={this.updateState}></Experience>
           <div>
             <h2>Education</h2>
             <label htmlFor="institute">Institution</label>
