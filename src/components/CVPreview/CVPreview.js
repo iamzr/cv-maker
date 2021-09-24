@@ -16,7 +16,7 @@ class CVPreview extends Component {
     return (
       <div className="preview">
         <div className="header">
-          <div className="title">
+          <div className="name">
             {data.firstName} {data.lastName}
           </div>
           <div>
