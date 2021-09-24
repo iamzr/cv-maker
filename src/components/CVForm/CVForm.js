@@ -22,15 +22,14 @@ class CVForm extends Component {
   }
 
   updateState = (e) => {
-    console.log(e.target.name);
-    const parentNode = e.target.parentNode.id;
+    // console.log(e.target.parentNode.parentNode);
+    const parentNode = e.target.parentNode.parentNode.id;
     this.setState((prevState) => ({
       [parentNode]: {
         ...prevState[parentNode],
         [e.target.name]: e.target.value,
       },
     }));
-    console.log(this.state);
   };
 
   render() {

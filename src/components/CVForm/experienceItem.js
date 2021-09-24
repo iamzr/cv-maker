@@ -8,7 +8,7 @@ class ExperienceItem extends Component {
   render() {
     const { updateState, key } = this.props;
     return (
-      <div className="form-section" key={key}>
+      <div id="experience" className="form-section" key={key}>
         <label htmlFor="jobTitle">Job Title</label>
         <input name="jobTitle" onChange={updateState}></input>
         <label htmlFor="company">Company</label>

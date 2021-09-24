@@ -8,7 +8,7 @@ class Skills extends Component {
   render() {
     const { updateState } = this.props;
     return (
-      <div className="form-section">
+      <div className="form-section" id="skills">
         <h2>Skills</h2>
         <label htmlFor="skill">Skill:</label>
         <input name="skill1" onChange={this.updateState}></input>
