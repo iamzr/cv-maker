@@ -5,21 +5,32 @@ import Personal from "./personal";
 import Experience from "./experience";
 import Education from "./education";
 import Skills from "./skills";
+import ExperienceItem from "./experienceItem";
 
 class CVForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      personal: {},
+      experience: {},
+      education: {},
+      skills: {},
+    };
 
     this.updateState = this.updateState.bind(this);
   }
 
   updateState = (e) => {
-    console.log(e);
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
+    console.log(e.target.name);
+    const parentNode = e.target.parentNode.id;
+    this.setState((prevState) => ({
+      [parentNode]: {
+        ...prevState[parentNode],
+        [e.target.name]: e.target.value,
+      },
+    }));
+    console.log(this.state);
   };
 
   render() {

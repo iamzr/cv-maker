@@ -9,7 +9,7 @@ class Personal extends Component {
     const { updateState } = this.props;
 
     return (
-      <div className="form-section">
+      <div id="personal" className="form-section">
         <h2>Personal</h2>
         <label htmlFor="firstName">First name</label>
         <input name="firstName" id="firstName" onChange={updateState}></input>

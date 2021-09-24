@@ -7,65 +7,61 @@ class CVPreview extends Component {
   }
 
   render() {
-    const data = this.props.data;
-    let content = [];
-    for (const item in data) {
-      content.push(<div>{data[item]}</div>);
-    }
+    const { personal, experience, education, skills } = this.props.data;
 
     return (
       <div className="preview">
         <div className="header">
           <div className="name">
-            {data.firstName} {data.lastName}
+            {personal.firstName} {personal.lastName}
           </div>
           <div>
-            {data.phone} | {data.email}
+            {personal.phone} | {personal.email}
           </div>
-          <div>{data.address}</div>
+          <div>{personal.address}</div>
         </div>
 
         <div className="section">
           <div className="heading">Experience</div>
           <div className="line1">
-            <div>{data.jobTitle}</div>
+            <div>{experience.jobTitle}</div>
             <div className="dates">
-              {data.startDate} - {data.endDate}
+              {experience.startDate} - {experience.endDate}
             </div>
           </div>
           <div className="line2">
-            <div>{data.company}</div>
+            <div>{experience.company}</div>
           </div>
           <ul className="line3">
-            <li>{data.text}</li>
+            <li>{experience.text}</li>
           </ul>
         </div>
 
         <div className="section">
           <div className="heading">Education</div>
           <div className="line1">
-            <div>{data.institute}</div>
+            <div>{education.institute}</div>
             <div className="dates">
-              {data.startDate} - {data.endDate}
+              {education.startDate} - {education.endDate}
             </div>
           </div>
           <div className="line3">
-            <div>{data.qual}</div>
-            <div>{data.grade}</div>
+            <div>{education.qual}</div>
+            <div>{education.grade}</div>
           </div>
         </div>
 
         <div className="section">
           <div className="heading">Skills</div>
           <div className="line1">
-            <div>{data.institute}</div>
+            <div>{skills.institute}</div>
             <div className="dates">
-              {data.startDate} - {data.endDate}
+              {skills.startDate} - {skills.endDate}
             </div>
           </div>
           <div className="line3">
-            <div>{data.qual}</div>
-            <div>{data.grade}</div>
+            <div>{skills.qual}</div>
+            <div>{skills.grade}</div>
           </div>
         </div>
       </div>
