@@ -1,0 +1,36 @@
+/* When screen is wider than tall */
+.cv-form {
+  display: flex;
+}
+
+form {
+  width: 50%;
+  box-sizing: border-box;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.CVPreview {
+  width: 50%;
+  height: auto;
+  box-sizing: border-box;
+  background-color: green;
+}
+
+/* When screen is longer than tall */
+@media screen and (max-width: 900px) {
+  .cv-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .CVPreview {
+    width: 100%;
+  }
+}
