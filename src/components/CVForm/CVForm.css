@@ -16,6 +16,10 @@ form {
   flex-direction: column;
 }
 
+.form-section button {
+  width: fit-content;
+}
+
 .CVPreview {
   width: 50%;
   height: auto;

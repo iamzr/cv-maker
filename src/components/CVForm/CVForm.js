@@ -16,6 +16,7 @@ class CVForm extends Component {
   }
 
   updateState = (e) => {
+    console.log(e);
     this.setState({
       [e.target.name]: e.target.value,
     });

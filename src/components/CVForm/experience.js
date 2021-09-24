@@ -1,25 +1,38 @@
 import { Component } from "react";
+import ExperienceItem from "./experienceItem";
+import { uniqueId } from "lodash";
 
 class Experience extends Component {
   constructor(props) {
     super(props);
+
+    this.state = { count: 0 };
+    this.addItem = this.addItem.bind(this);
+  }
+
+  renderDivs() {
+    const { updateState } = this.props;
+    let { count } = this.state;
+    let divs = [];
+    while (count--) {
+      divs.push(<ExperienceItem key={count}></ExperienceItem>);
+    }
+    return divs;
+  }
+
+  addItem(e) {
+    e.preventDefault();
+    this.setState({ count: this.state.count + 1 });
   }
 
   render() {
     const { updateState } = this.props;
     return (
-      <div className="form-section">
+      <div>
         <h2>Experience</h2>
-        <label htmlFor="jobTitle">Job Title</label>
-        <input name="jobTitle" onChange={updateState}></input>
-        <label htmlFor="company">Company</label>
-        <input name="company" onChange={updateState}></input>
-        <label htmlFor="startDate">Start Date</label>
-        <input name="startDate" type="date" onChange={updateState}></input>
-        <label htmlFor="endDate">End Date</label>
-        <input name="endDate" type="date" onChange={updateState}></input>
-        <label htmlFor="text">Details</label>
-        <input name="text" type="textarea" onChange={updateState}></input>
+        <ExperienceItem updateState={updateState}></ExperienceItem>
+        {this.renderDivs()}
+        <button onClick={this.addItem}>Add</button>
       </div>
     );
   }

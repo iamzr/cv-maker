@@ -54,6 +54,20 @@ class CVPreview extends Component {
             <div>{data.grade}</div>
           </div>
         </div>
+
+        <div className="section">
+          <div className="heading">Skills</div>
+          <div className="line1">
+            <div>{data.institute}</div>
+            <div className="dates">
+              {data.startDate} - {data.endDate}
+            </div>
+          </div>
+          <div className="line3">
+            <div>{data.qual}</div>
+            <div>{data.grade}</div>
+          </div>
+        </div>
       </div>
     );
   }
