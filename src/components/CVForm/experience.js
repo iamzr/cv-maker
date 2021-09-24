@@ -13,7 +13,7 @@ class Experience extends Component {
     const { updateState } = this.props;
     let { count } = this.state;
     let divs = [];
-    for (let i = 1; i < count; i++) {
+    for (let i = 0; i < count; i++) {
       divs.push(
         <ExperienceItem
           updateState={updateState}
@@ -35,7 +35,6 @@ class Experience extends Component {
     return (
       <div id="experience">
         <h2>Experience</h2>
-        <ExperienceItem updateState={updateState} no={1}></ExperienceItem>
         {this.renderDivs()}
         <button onClick={this.addItem}>Add</button>
       </div>

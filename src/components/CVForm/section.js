@@ -3,25 +3,41 @@ import { Component } from "react";
 class Section extends Component {
   constructor(props) {
     super(props);
+
+    this.state = { count: 1 };
+    this.addItem = this.addItem.bind(this);
   }
 
-  renderParts() {
-    const { updateState, items } = this.props;
+  renderDivs() {
+    const { updateState } = this.props;
+    let { count } = this.state;
     let divs = [];
-    items.push(
-      divs.map((item) => {
-        return (
-          <div>
-            <label htmlFor={item.name}>{item.label}</label>
-            <input name={item.name} type={item.type}></input>
-          </div>
-        );
-      })
-    );
+    for (let i = 0; i < count; i++) {
+      divs.push(
+        <ExperienceItem
+          updateState={updateState}
+          key={count}
+          no={count}
+        ></ExperienceItem>
+      );
+    }
+    return divs;
+  }
+
+  addItem(e) {
+    e.preventDefault();
+    this.setState({ count: this.state.count + 1 });
   }
 
   render() {
-    return <div className="form-section">{this.renderParts}</div>;
+    const { name, item } = this.props;
+    return (
+      <div id={name}>
+        <h2>{name}</h2>
+        {this.renderDivs(item)}
+        <button onClick={this.addItem}>Add</button>
+      </div>
+    );
   }
 }
 

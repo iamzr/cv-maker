@@ -7,7 +7,7 @@ class Skills extends Component {
     return (
       <div id="skills">
         <h2>Skills</h2>
-        <SkillsItem></SkillsItem>
+        <SkillsItem updateState={updateState}></SkillsItem>
       </div>
     );
   }
