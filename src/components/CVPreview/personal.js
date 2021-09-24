@@ -1,5 +1,5 @@
 import { Component } from "react";
-import PersonalItem from "./experienceItem";
+import PersonalItem from "./personalItem";
 
 class Personal extends Component {
   renderDivs(object) {

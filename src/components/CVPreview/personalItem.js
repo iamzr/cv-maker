@@ -2,16 +2,16 @@ import { Component } from "react";
 
 class PersonalItem extends Component {
   render() {
-    const { data } = this.props;
+    const { personal } = this.props;
     return (
       <div className="header">
         <div className="name">
-          {data.firstName} {data.lastName}
+          {personal.firstName} {personal.lastName}
         </div>
         <div>
-          {data.phone} | {data.email}
+          {personal.phone} | {personal.email}
         </div>
-        <div>{data.address}</div>
+        <div>{personal.address}</div>
       </div>
     );
   }
