@@ -7,9 +7,13 @@ form {
   width: 50%;
   box-sizing: border-box;
   background-color: aqua;
+
+  padding: 5%;
+}
+
+.form-section {
   display: flex;
   flex-direction: column;
-  padding: 5%;
 }
 
 .CVPreview {
