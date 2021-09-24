@@ -4,7 +4,7 @@ class PersonalItem extends Component {
   render() {
     const { updateState } = this.props;
     return (
-      <div className="form-section">
+      <div className="form-section" id="0">
         <label htmlFor="firstName">First name</label>
         <input name="firstName" id="firstName" onChange={updateState}></input>
         <label htmlFor="lastName">Last Name</label>

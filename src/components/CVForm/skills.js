@@ -1,19 +1,13 @@
 import { Component } from "react";
+import SkillsItem from "./skillsItem";
 
 class Skills extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { updateState } = this.props;
     return (
-      <div className="form-section" id="skills">
+      <div id="skills">
         <h2>Skills</h2>
-        <label htmlFor="skill">Skill:</label>
-        <input name="skill1" onChange={this.updateState}></input>
-        <label htmlFor="skill2">Skill:</label>
-        <input name="skill2" onChange={this.updateState}></input>
+        <SkillsItem></SkillsItem>
       </div>
     );
   }

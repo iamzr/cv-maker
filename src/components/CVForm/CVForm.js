@@ -5,7 +5,6 @@ import Personal from "./personal";
 import Experience from "./experience";
 import Education from "./education";
 import Skills from "./skills";
-import ExperienceItem from "./experienceItem";
 
 class CVForm extends Component {
   constructor(props) {
@@ -24,12 +23,17 @@ class CVForm extends Component {
   updateState = (e) => {
     // console.log(e.target.parentNode.parentNode);
     const parentNode = e.target.parentNode.parentNode.id;
+    const id = e.target.parentNode.id;
     this.setState((prevState) => ({
       [parentNode]: {
         ...prevState[parentNode],
-        [e.target.name]: e.target.value,
+        [id]: {
+          ...prevState[parentNode][id],
+          [e.target.name]: e.target.value,
+        },
       },
     }));
+    console.log(this.state);
   };
 
   render() {

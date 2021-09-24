@@ -1,12 +1,11 @@
 import { Component } from "react";
 import ExperienceItem from "./experienceItem";
-import { uniqueId } from "lodash";
 
 class Experience extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { count: 0 };
+    this.state = { count: 1 };
     this.addItem = this.addItem.bind(this);
   }
 
@@ -14,8 +13,14 @@ class Experience extends Component {
     const { updateState } = this.props;
     let { count } = this.state;
     let divs = [];
-    while (count--) {
-      divs.push(<ExperienceItem key={count}></ExperienceItem>);
+    for (let i = 1; i < count; i++) {
+      divs.push(
+        <ExperienceItem
+          updateState={updateState}
+          key={count}
+          no={count}
+        ></ExperienceItem>
+      );
     }
     return divs;
   }
@@ -28,9 +33,9 @@ class Experience extends Component {
   render() {
     const { updateState } = this.props;
     return (
-      <div>
+      <div id="experience">
         <h2>Experience</h2>
-        <ExperienceItem updateState={updateState}></ExperienceItem>
+        <ExperienceItem updateState={updateState} no={1}></ExperienceItem>
         {this.renderDivs()}
         <button onClick={this.addItem}>Add</button>
       </div>
