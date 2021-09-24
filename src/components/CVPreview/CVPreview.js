@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./CVPreview.css";
-import PersonalItem from "./personalItem";
 import Experience from "./experience";
 import Education from "./education";
 import Skills from "./skills";
+import Personal from "./personal";
 
 class CVPreview extends Component {
   render() {
@@ -11,7 +11,7 @@ class CVPreview extends Component {
 
     return (
       <div className="preview">
-        {/* <PersonalItem data={personal[0]}></PersonalItem> */}
+        <Personal personal={personal}></Personal>
 
         <div className="section">
           <div className="heading">Experience</div>
