@@ -88,6 +88,7 @@ class CVForm extends Component {
           <input name="skill2" onChange={this.updateState}></input>
         </form>
         <div className="CVPreview">
+          <h2>CV Preview</h2>
           <CVPreview data={this.state}></CVPreview>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./CVPreview.css";
 
 class CVPreview extends Component {
   constructor(props) {
@@ -13,19 +14,21 @@ class CVPreview extends Component {
     }
 
     return (
-      <div>
-        <h2>CV Preview</h2>
-
-        <div className="title">
-          {data.firstName} {data.lastName}
+      <div className="Preview">
+        <div className="header">
+          <div className="title">
+            {data.firstName} {data.lastName}
+          </div>
+          <div>
+            {data.phone} | {data.email}
+          </div>
+          <div>{data.address}</div>
         </div>
-        <div>
-          {data.phone}| {data.email}
-        </div>
-        <div>{data.address}</div>
 
-        <div className="heading">Experience</div>
-        <div>{data.jobTitle}</div>
+        <div className="section">
+          <div className="heading">Experience</div>
+          <div>{data.jobTitle}</div>
+        </div>
       </div>
     );
   }
