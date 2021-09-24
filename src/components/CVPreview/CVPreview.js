@@ -3,17 +3,9 @@ import "./CVPreview.css";
 import PersonalItem from "./personalItem";
 import Experience from "./experience";
 import Education from "./education";
+import Skills from "./skills";
 
 class CVPreview extends Component {
-  renderDivs(object) {
-    let divs = [];
-    for (let key in object) {
- 
-      );
-    }
-    return divs;
-  }
-
   render() {
     const { personal, experience, education, skills } = this.props.data;
 
@@ -33,16 +25,7 @@ class CVPreview extends Component {
 
         <div className="section">
           <div className="heading">Skills</div>
-          <div className="line1">
-            <div>{skills.institute}</div>
-            <div className="dates">
-              {skills.startDate} - {skills.endDate}
-            </div>
-          </div>
-          <div className="line3">
-            <div>{skills.qual}</div>
-            <div>{skills.grade}</div>
-          </div>
+          <Skills skills={skills}></Skills>
         </div>
       </div>
     );
