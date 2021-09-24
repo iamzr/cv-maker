@@ -1,13 +1,26 @@
 import React, { Component } from "react";
 import "./CVPreview.css";
 import PersonalItem from "./personalItem";
-import ExperienceItem from "./experienceItem";
+import Experience from "./experience";
 
 class CVPreview extends Component {
   renderDivs(object) {
     let divs = [];
     for (let key in object) {
-      divs.push(<ExperienceItem experience={object[key]}></ExperienceItem>);
+      divs.push(
+        <div>
+          <div className="line1">
+            <div>{object[key].institute}</div>
+            <div className="dates">
+              {object[key].startDate} - {object[key].endDate}
+            </div>
+          </div>
+          <div className="line3">
+            <div>{object[key].qual}</div>
+            <div>{object[key].grade}</div>
+          </div>
+        </div>
+      );
     }
     return divs;
   }
@@ -21,21 +34,12 @@ class CVPreview extends Component {
 
         <div className="section">
           <div className="heading">Experience</div>
-          <div>{this.renderDivs(experience)}</div>
+          <Experience experience={experience}></Experience>
         </div>
 
         <div className="section">
           <div className="heading">Education</div>
-          <div className="line1">
-            <div>{education.institute}</div>
-            <div className="dates">
-              {education.startDate} - {education.endDate}
-            </div>
-          </div>
-          <div className="line3">
-            <div>{education.qual}</div>
-            <div>{education.grade}</div>
-          </div>
+          <div>{this.renderDivs(education)}</div>
         </div>
 
         <div className="section">
