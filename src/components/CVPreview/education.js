@@ -1,16 +1,19 @@
 import { Component } from "react";
-import ExperienceItem from "./experienceItem";
+import EducationItem from "./educationItem";
 
 class Education extends Component {
   renderDivs(object) {
     let divs = [];
     for (let key in object) {
-      divs.push(<ExperienceItem experience={object[key]}></ExperienceItem>);
+      divs.push(<EducationItem education={object[key]}></EducationItem>);
     }
     return divs;
   }
 
-  render() {}
+  render() {
+    const { education } = this.props;
+    return <div>{this.renderDivs(education)}</div>;
+  }
 }
 
 export default Education;

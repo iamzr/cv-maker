@@ -2,6 +2,7 @@ import { Component } from "react";
 
 class EducationItem extends Component {
   render() {
+    const { education } = this.props;
     return (
       <div>
         <div className="line1">
