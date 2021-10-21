@@ -2,7 +2,7 @@ import { Component } from "react";
 
 class ExperienceItem extends Component {
   render() {
-    const { updateState, no } = this.props;
+    const { updateState, no, remove } = this.props;
     return (
       <div className="form-section" id={no}>
         <label htmlFor="jobTitle">Job Title</label>
@@ -15,7 +15,7 @@ class ExperienceItem extends Component {
         <input name="endDate" type="date" onChange={updateState}></input>
         <label htmlFor="text">Details</label>
         <input name="text" type="textarea" onChange={updateState}></input>
-        <button>Remove</button>
+        <button onClick={remove}>Remove</button>
       </div>
     );
   }

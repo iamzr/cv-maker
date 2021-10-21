@@ -1,45 +1,41 @@
-import { Component } from "react";
+import { useState } from "react";
 import ExperienceItem from "./experienceItem";
 
-class Experience extends Component {
-  constructor(props) {
-    super(props);
+function Experience(props) {
+  const [count, setCount] = useState(0);
+  const { updateState, removeItem } = props;
 
-    this.state = { count: 1 };
-    this.addItem = this.addItem.bind(this);
-  }
-
-  renderDivs() {
-    const { updateState } = this.props;
-    let { count } = this.state;
+  function renderDivs() {
     let divs = [];
     for (let i = 0; i < count; i++) {
       divs.push(
         <ExperienceItem
           updateState={updateState}
-          key={count}
-          no={count}
+          remove={handleRemove}
+          key={"experience" + i}
+          no={"experience" + i}
         ></ExperienceItem>
       );
     }
     return divs;
   }
 
-  addItem(e) {
-    e.preventDefault();
-    this.setState({ count: this.state.count + 1 });
+  function addItem() {
+    setCount(count + 1);
   }
 
-  render() {
-    const { updateState } = this.props;
-    return (
-      <div id="experience">
-        <h2>Experience</h2>
-        {this.renderDivs()}
-        <button onClick={this.addItem}>Add</button>
-      </div>
-    );
+  function handleRemove(e) {
+    removeItem(e);
+    setCount(count - 1);
   }
+
+  return (
+    <div id="experience">
+      <h2>Experience</h2>
+      {renderDivs()}
+      <button onClick={addItem}>Add</button>
+    </div>
+  );
 }
 
 export default Experience;

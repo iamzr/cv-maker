@@ -16,6 +16,7 @@ function App() {
     const parentNode = e.target.parentNode.parentNode.id;
     const id = e.target.parentNode.id;
     setState((prevState) => ({
+      ...prevState,
       [parentNode]: {
         ...prevState[parentNode],
         [id]: {
@@ -26,6 +27,15 @@ function App() {
     }));
   }
 
+  function removeItem(e) {
+    const parentNode = e.target.parentNode.parentNode.id;
+    const id = e.target.parentNode.id;
+    setState((state) => {
+      state[parentNode][id] = undefined;
+      return state;
+    });
+  }
+
   useEffect(() => {
     console.log(state);
   }, [state]);
@@ -34,8 +44,12 @@ function App() {
     <div className="App">
       <Header></Header>
       <div className="container">
-        <CVForm state={state} updateState={updateState}></CVForm>
-        <CVPreview data={state}></CVPreview>
+        <CVForm
+          state={state}
+          updateState={updateState}
+          removeItem={removeItem}
+        ></CVForm>
+        {/* <CVPreview data={state}></CVPreview> */}
       </div>
     </div>
   );
