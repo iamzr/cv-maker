@@ -5,9 +5,7 @@ class PersonalItem extends Component {
     const { personal } = this.props;
     return (
       <div className="header">
-        <div className="name">
-          {personal.firstName} {personal.lastName}
-        </div>
+        <div className="name">{personal.name}</div>
         <div>
           {personal.phone} | {personal.email}
         </div>
