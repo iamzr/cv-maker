@@ -1,5 +1,5 @@
 /* When screen is wider than tall */
-.cv-form {
+/* .cv-form {
   display: flex;
 }
 
@@ -9,7 +9,7 @@ form {
   background-color: aqua;
 
   padding: 5%;
-}
+} */
 
 .form-section {
   display: flex;
@@ -20,15 +20,15 @@ form {
   width: fit-content;
 }
 
-.CVPreview {
+/* .CVPreview {
   width: 50%;
   height: auto;
   box-sizing: border-box;
   background-color: green;
-}
+} */
 
 /* When screen is longer than tall */
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   .cv-form {
     display: flex;
     flex-direction: column;
@@ -41,4 +41,4 @@ form {
   .CVPreview {
     width: 100%;
   }
-}
+} */
