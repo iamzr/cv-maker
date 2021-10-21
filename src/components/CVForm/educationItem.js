@@ -2,9 +2,9 @@ import { Component } from "react";
 
 class EducationItem extends Component {
   render() {
-    const { updateState } = this.props;
+    const { updateState, remove, no } = this.props;
     return (
-      <div className="form-section">
+      <div className="form-section" id={no}>
         <label htmlFor="institute">Institution</label>
         <input name="institute" onChange={updateState}></input>
         <label htmlFor="qual">Qualification</label>
@@ -15,6 +15,7 @@ class EducationItem extends Component {
         <input name="startDate" type="date" onChange={updateState}></input>
         <label htmlFor="endDate">End Date</label>
         <input name="endDate" type="date" onChange={updateState}></input>
+        <button onClick={remove}>Remove</button>
       </div>
     );
   }
