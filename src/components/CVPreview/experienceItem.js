@@ -14,9 +14,9 @@ class ExperienceItem extends Component {
         <div className="line2">
           <div>{experience.company}</div>
         </div>
-        <ul className="line3">
-          <li>{experience.text}</li>
-        </ul>
+        <div className="line3">
+          <div>{experience.text}</div>
+        </div>
       </div>
     );
   }
