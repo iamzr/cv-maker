@@ -8,8 +8,8 @@ function App() {
   let [state, setState] = useState({
     personal: {},
     experience: {},
-    education: [],
-    skills: [],
+    education: {},
+    skills: {},
   });
 
   function updateState(e) {
@@ -25,6 +25,10 @@ function App() {
       },
     }));
   }
+
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
 
   return (
     <div className="App">
