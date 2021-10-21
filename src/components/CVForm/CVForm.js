@@ -6,15 +6,21 @@ import Education from "./education";
 import Skills from "./skills";
 
 function CVForm(props) {
-  const { updateState } = props;
+  const { updateState, removeItem } = props;
 
   return (
     <div className="cv-form">
       <form onSubmit={(e) => e.preventDefault()}>
         <Personal updateState={updateState}></Personal>
-        <Experience updateState={updateState}></Experience>
-        <Education updateState={updateState}></Education>
-        <Skills updateState={updateState}></Skills>
+        <Experience
+          updateState={updateState}
+          removeItem={removeItem}
+        ></Experience>
+        <Education
+          updateState={updateState}
+          removeItem={removeItem}
+        ></Education>
+        <Skills updateState={updateState} removeItem={removeItem}></Skills>
       </form>
     </div>
   );
