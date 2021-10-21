@@ -10,7 +10,7 @@ function CVForm(props) {
 
   return (
     <div className="cv-form">
-      <form>
+      <form onSubmit={(e) => e.preventDefault()}>
         <Personal updateState={updateState}></Personal>
         <Experience updateState={updateState}></Experience>
         <Education updateState={updateState}></Education>
