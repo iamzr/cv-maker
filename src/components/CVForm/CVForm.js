@@ -11,10 +11,10 @@ function CVForm(props) {
   return (
     <div className="cv-form">
       <form>
-        <Personal updatestate={updateState}></Personal>
-        <Experience updatestate={updateState}></Experience>
-        <Education updatestate={updateState}></Education>
-        <Skills updatestate={updateState}></Skills>
+        <Personal updateState={updateState}></Personal>
+        <Experience updateState={updateState}></Experience>
+        <Education updateState={updateState}></Education>
+        <Skills updateState={updateState}></Skills>
       </form>
     </div>
   );
