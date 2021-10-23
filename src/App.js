@@ -14,6 +14,7 @@ function App() {
 
   function updateState(e) {
     const parentNode = e.target.parentNode.parentNode.id;
+    console.log(parentNode);
     const id = e.target.parentNode.id;
     setState((prevState) => ({
       ...prevState,
@@ -37,7 +38,7 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(state);
+    console.log(state.experience);
   }, [state]);
 
   return (

@@ -2,9 +2,9 @@ import { Component } from "react";
 
 class ExperienceItem extends Component {
   render() {
-    const { updateState, no, remove } = this.props;
+    const { updateState, id, remove, state } = this.props;
     return (
-      <div className="form-section" id={no}>
+      <div className="form-section" id={id}>
         <label htmlFor="jobTitle">Job Title</label>
         <input name="jobTitle" onChange={updateState}></input>
         <label htmlFor="company">Company</label>

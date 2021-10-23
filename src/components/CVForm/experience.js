@@ -3,17 +3,18 @@ import ExperienceItem from "./experienceItem";
 
 function Experience(props) {
   const [count, setCount] = useState(0);
-  const { updateState, removeItem } = props;
+  const { updateState, removeItem, state } = props;
 
   function renderDivs() {
     let divs = [];
     for (let i = 0; i < count; i++) {
       divs.push(
         <ExperienceItem
+          state={state}
           updateState={updateState}
           remove={handleRemove}
           key={"experience" + i}
-          no={"experience" + i}
+          id={"experience" + i}
         ></ExperienceItem>
       );
     }

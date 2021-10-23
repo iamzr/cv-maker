@@ -2,7 +2,7 @@ function PersonalItem(props) {
   const { updateState } = props;
 
   return (
-    <div className="form-section" id="personal0">
+    <div className="form-section" id="personal">
       <label htmlFor="name">Full Name</label>
       <input name="name" id="name" onChange={updateState}></input>
       <label htmlFor="phone">Phone Number</label>
