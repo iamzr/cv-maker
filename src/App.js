@@ -15,9 +15,12 @@ function App() {
 
   console.log(cv);
   return (
-    <div className="container">
-      <Form cv={cv} setCV={setCV}></Form>
-      <Preview cv={cv}></Preview>
+    <div>
+      <Header></Header>
+      <div className="container">
+        <Form cv={cv} setCV={setCV}></Form>
+        <Preview cv={cv}></Preview>
+      </div>
     </div>
   );
 }
