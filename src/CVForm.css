@@ -1,17 +1,16 @@
-/* When screen is wider than tall */
-/* .cv-form {
+When screen is wider than tall */ .cv-form {
   display: flex;
 }
 
-form {
+.form {
   width: 50%;
   box-sizing: border-box;
   background-color: aqua;
 
   padding: 5%;
-} */
+}
 
-.form-section {
+.Section {
   display: flex;
   flex-direction: column;
 }

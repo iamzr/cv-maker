@@ -15,14 +15,14 @@ Header {
   display: flex;
 }
 
-.preview {
+.Preview {
   width: 50%;
   height: auto;
   box-sizing: border-box;
   background-color: green;
 }
 
-.cv-form {
+.Form {
   width: 50%;
   height: auto;
   background-color: aqua;
@@ -36,11 +36,11 @@ Header {
     flex-direction: column;
   }
 
-  .cv-form {
+  .Form {
     width: 100%;
   }
 
-  .preview {
+  .Preview {
     width: 100%;
   }
 }
