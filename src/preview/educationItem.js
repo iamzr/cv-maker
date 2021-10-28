@@ -4,7 +4,15 @@ function EducationItem({ education }) {
       <div className="line1">
         <div>{education.institute.value}</div>
         <div className="dates">
-          {education.startDate.value} - {education.endDate.value}
+          {new Date(education.startDate.value).toLocaleDateString("en-UK", {
+            month: "short",
+            year: "numeric",
+          })}{" "}
+          -{" "}
+          {new Date(education.endDate.value).toLocaleDateString("en-UK", {
+            month: "short",
+            year: "numeric",
+          })}
         </div>
       </div>
       <div className="line3">
