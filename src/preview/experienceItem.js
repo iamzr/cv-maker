@@ -4,7 +4,15 @@ function ExperienceItem({ experience }) {
       <div className="line1">
         <div>{experience.title.value}</div>
         <div className="dates">
-          {experience.startDate.value} - {experience.endDate.value}
+          {new Date(experience.startDate.value).toLocaleDateString("en-UK", {
+            month: "short",
+            year: "numeric",
+          })}{" "}
+          -{" "}
+          {new Date(experience.endDate.value).toLocaleDateString("en-UK", {
+            month: "short",
+            year: "numeric",
+          })}
         </div>
       </div>
       <div className="line2">
