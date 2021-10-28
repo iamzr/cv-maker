@@ -1,13 +1,17 @@
 import Section from "./section";
 import { v4 as uuid } from "uuid";
-import "/home/zia/TOP/cv-maker/src/CVForm.css";
 import "./form.css";
 
 function Form({ cv, setCV }) {
   const personalItem = {
     id: uuid(),
     item: {
-      name: { id: "name", name: "Name", type: "text", value: "" },
+      name: {
+        id: "name",
+        name: "Name",
+        type: "text",
+        value: "",
+      },
       phone: {
         id: "phone",
         name: "Phone Number",
