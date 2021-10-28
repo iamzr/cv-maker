@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import example from "../components/example";
+import empty from "../components/empty";
 
 function Header({ setCV }) {
   function loadExample() {
@@ -10,15 +11,7 @@ function Header({ setCV }) {
   }
 
   function reset() {
-    setCV(
-      (cv) =>
-        (cv = {
-          personal: [],
-          experience: [],
-          education: [],
-          skills: [],
-        })
-    );
+    setCV((cv) => (cv = empty));
   }
 
   return (
