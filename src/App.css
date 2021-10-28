@@ -9,38 +9,52 @@ Header {
   justify-content: space-between;
   font-size: calc(20px + 2vmin);
   color: white;
+  position: fixed;
+  width: 100%;
 }
 
-.container {
+.flex-container {
   display: flex;
+  border-collapse: collapse;
 }
 
 .Preview {
   width: 50%;
   height: auto;
   box-sizing: border-box;
-  background-color: green;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 50px;
 }
 
 .Form {
   width: 50%;
   height: auto;
-  background-color: aqua;
   padding: 5%;
+  height: 100%;
+  border-right: 1px solid black;
 }
 
 /* When screen is longer than tall */
 @media screen and (max-width: 900px) {
-  .container {
+  .flex-container {
     display: flex;
     flex-direction: column;
   }
 
+  Header {
+    position: static;
+  }
+
   .Form {
     width: 100%;
+    border-bottom: 1px solid black;
+    border-right: none;
   }
 
   .Preview {
     width: 100%;
+    position: static;
   }
 }
