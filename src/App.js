@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import Form from "./form/form";
 import Preview from "./preview/preview";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const [cv, setCV] = useState({
     personal: [],
@@ -13,11 +15,11 @@ function App() {
     skills: [],
   });
 
-  console.log(cv);
+  console.log("cv", cv);
   return (
     <div>
-      <Header></Header>
-      <div className="container">
+      <Header setCV={setCV}></Header>
+      <div className="flex-container">
         <Form cv={cv} setCV={setCV}></Form>
         <Preview cv={cv}></Preview>
       </div>
