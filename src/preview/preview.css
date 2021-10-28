@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.preview {
+.Preview {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
   flex-direction: column;
 }
 
-.heading {
+.section-header {
   padding-bottom: 2px;
   border-bottom: 1px solid black;
   box-sizing: border-box;
@@ -55,5 +55,5 @@
 }
 
 .line3 {
-  padding-top: 0.5em;
+  padding-bottom: 1em;
 }

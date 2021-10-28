@@ -1,14 +1,28 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import CVForm from "./components/CVForm/CVForm";
-import CVPreview from "./components/CVPreview/CVPreview";
+
+import Form from "./form/form";
+import Preview from "./preview/preview";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [cv, setCV] = useState({
+    personal: [],
+    experience: [],
+    education: [],
+    skills: [],
+  });
+
+  console.log("cv", cv);
   return (
-    <div className="App">
-      <Header></Header>
-      <CVForm></CVForm>
+    <div>
+      <Header setCV={setCV}></Header>
+      <div className="flex-container">
+        <Form cv={cv} setCV={setCV}></Form>
+        <Preview cv={cv}></Preview>
+      </div>
     </div>
   );
 }
