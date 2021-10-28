@@ -1,4 +1,5 @@
 import React from "react";
+import { Form, Button } from "react-bootstrap";
 
 function Section(props) {
   const {
@@ -18,23 +19,23 @@ function Section(props) {
     for (let element in item) {
       const id = item[element]["id"];
       divs.push(
-        <React.Fragment>
-          <label
+        <Form.Group>
+          <Form.Label
             key={"label-" + itemIndex + id}
             id={"label-" + itemIndex + id}
-            htmlFor={id}
+            // htmlFor={id}
           >
             {item[element]["name"]}
-          </label>
-          <input
+          </Form.Label>
+          <Form.Control
             key={"input-" + itemIndex + id}
             id={"input-" + itemIndex + id}
             name={id}
             type={item[element]["type"]}
             defaultValue={item[element]["value"]}
             onChange={(e) => handleChange(e, section, itemIndex, id)}
-          ></input>
-        </React.Fragment>
+          ></Form.Control>
+        </Form.Group>
       );
     }
     console.log("renderItem done");
@@ -42,7 +43,7 @@ function Section(props) {
   }
 
   return (
-    <div className="Section">
+    <Form className="Section" onSubmit={(e) => e.preventDefault()}>
       <h2>{heading}</h2>
       {cv[section].map((i, index) => {
         const item = i.item;
@@ -50,26 +51,28 @@ function Section(props) {
         return (
           <div key={id} id={id}>
             <React.Fragment>{renderItem(item, index, section)}</React.Fragment>
-            <button
+            <Button
+              variant="danger"
               onClick={() => {
                 console.log("removed");
                 removeItem(section, index);
               }}
             >
               Remove
-            </button>
+            </Button>
           </div>
         );
       })}
-      <button
+      <Button
+        variant="primary"
         onClick={() => {
           console.log("clicked");
           addItem(sectionItem, section);
         }}
       >
         Add
-      </button>
-    </div>
+      </Button>
+    </Form>
   );
 }
 
