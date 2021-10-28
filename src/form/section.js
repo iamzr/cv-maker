@@ -10,6 +10,7 @@ function Section(props) {
     removeItem,
     handleChange,
     heading,
+    addRemove,
   } = props;
 
   function renderItem(item, itemIndex, section) {
@@ -19,7 +20,7 @@ function Section(props) {
     for (let element in item) {
       const id = item[element]["id"];
       divs.push(
-        <Form.Group>
+        <Form.Group className="mb-3">
           <Form.Label
             key={"label-" + itemIndex + id}
             id={"label-" + itemIndex + id}
@@ -44,34 +45,43 @@ function Section(props) {
 
   return (
     <Form className="Section" onSubmit={(e) => e.preventDefault()}>
-      <h2>{heading}</h2>
+      <h2 className="mt-5">{heading}</h2>
       {cv[section].map((i, index) => {
         const item = i.item;
         const id = i.id;
         return (
           <div key={id} id={id}>
             <React.Fragment>{renderItem(item, index, section)}</React.Fragment>
-            <Button
-              variant="danger"
-              onClick={() => {
-                console.log("removed");
-                removeItem(section, index);
-              }}
-            >
-              Remove
-            </Button>
+            {addRemove ? (
+              <Button
+                className="mb-3"
+                variant="danger"
+                onClick={() => {
+                  console.log("removed");
+                  removeItem(section, index);
+                }}
+              >
+                Remove
+              </Button>
+            ) : (
+              <div></div>
+            )}
           </div>
         );
       })}
-      <Button
-        variant="primary"
-        onClick={() => {
-          console.log("clicked");
-          addItem(sectionItem, section);
-        }}
-      >
-        Add
-      </Button>
+      {addRemove ? (
+        <Button
+          variant="primary"
+          onClick={() => {
+            console.log("clicked");
+            addItem(sectionItem, section);
+          }}
+        >
+          Add
+        </Button>
+      ) : (
+        <div></div>
+      )}
     </Form>
   );
 }

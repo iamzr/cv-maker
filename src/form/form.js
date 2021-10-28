@@ -1,6 +1,7 @@
 import Section from "./section";
 import { v4 as uuid } from "uuid";
 import "./form.css";
+import { useEffect } from "react";
 
 function Form({ cv, setCV }) {
   const personalItem = {
@@ -35,7 +36,7 @@ function Form({ cv, setCV }) {
         value: "",
       },
       endDate: { id: "endDate", name: "End Date", type: "date", value: "" },
-      text: { id: "text", name: "Details", type: "text", value: "" },
+      text: { id: "text", name: "Details", type: "textarea", value: "" },
     },
   };
 
@@ -49,7 +50,7 @@ function Form({ cv, setCV }) {
         value: "",
       },
       qual: { id: "qual", name: "Qualification", type: "text", value: "" },
-      grade: { id: "grade", name: "grade", type: "text", value: "" },
+      grade: { id: "grade", name: "Grade", type: "text", value: "" },
       startDate: {
         id: "startDate",
         name: "Start Date",
@@ -89,6 +90,11 @@ function Form({ cv, setCV }) {
       return { ...cv };
     });
   }
+
+  useEffect(() => {
+    addItem(personalItem, "personal");
+  }, []);
+
   return (
     <div className="Form">
       <Section
@@ -99,15 +105,7 @@ function Form({ cv, setCV }) {
         addItem={addItem}
         removeItem={removeItem}
         handleChange={handleChange}
-      ></Section>
-      <Section
-        cv={cv}
-        section="experience"
-        heading="Experience"
-        sectionItem={experienceItem}
-        addItem={addItem}
-        removeItem={removeItem}
-        handleChange={handleChange}
+        addRemove={false}
       ></Section>
       <Section
         cv={cv}
@@ -117,6 +115,17 @@ function Form({ cv, setCV }) {
         addItem={addItem}
         removeItem={removeItem}
         handleChange={handleChange}
+        addRemove={true}
+      ></Section>
+      <Section
+        cv={cv}
+        section="experience"
+        heading="Experience"
+        sectionItem={experienceItem}
+        addItem={addItem}
+        removeItem={removeItem}
+        handleChange={handleChange}
+        addRemove={true}
       ></Section>
       <Section
         cv={cv}
@@ -126,6 +135,7 @@ function Form({ cv, setCV }) {
         addItem={addItem}
         removeItem={removeItem}
         handleChange={handleChange}
+        addRemove={true}
       ></Section>
     </div>
   );
