@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import "./App.css";
 import Header from "./components/Header";
 
@@ -15,13 +16,21 @@ function App() {
     skills: [],
   });
 
+  const print = false;
+
+  const componentRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   console.log("cv", cv);
   return (
     <div>
-      <Header setCV={setCV}></Header>
+      <Header setCV={setCV} handlePrint={handlePrint}></Header>
       <div className="flex-container">
         <Form cv={cv} setCV={setCV}></Form>
-        <Preview cv={cv}></Preview>
+        <Preview cv={cv} ref={componentRef} print={print}></Preview>
       </div>
     </div>
   );

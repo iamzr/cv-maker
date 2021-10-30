@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import example from "../components/example";
 import empty from "../components/empty";
 
-function Header({ setCV }) {
+function Header({ setCV, handlePrint }) {
   function loadExample() {
     setCV((cv) => {
       return (cv = example);
@@ -21,7 +21,9 @@ function Header({ setCV }) {
         <Button id="load-example" onClick={loadExample}>
           Load Example
         </Button>{" "}
-        <Button id="generate-pdf">Generate PDF</Button>{" "}
+        <Button id="generate-pdf" onClick={handlePrint}>
+          Generate PDF
+        </Button>{" "}
         <Button id="reset" onClick={reset}>
           Reset
         </Button>{" "}
