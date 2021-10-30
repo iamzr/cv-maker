@@ -93,6 +93,7 @@ function Form({ cv, setCV }) {
 
   useEffect(() => {
     addItem(personalItem, "personal");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
