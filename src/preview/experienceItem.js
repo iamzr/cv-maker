@@ -1,8 +1,10 @@
 function ExperienceItem({ experience }) {
+  const arr = experience.text.value.split("\n");
+
   return (
     <div>
       <div className="line1">
-        <div>{experience.title.value}</div>
+        <div className="bold">{experience.title.value}</div>
         <div className="dates">
           {new Date(experience.startDate.value).toLocaleDateString("en-UK", {
             month: "short",
@@ -19,7 +21,11 @@ function ExperienceItem({ experience }) {
         <div>{experience.company.value}</div>
       </div>
       <div className="line3">
-        <div>{experience.text.value}</div>
+        <ul>
+          {arr.map((element) => (
+            <li>{element}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
