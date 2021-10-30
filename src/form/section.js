@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import RenderItem from "./renderItem";
 
 function Section(props) {
   const {
@@ -13,58 +14,6 @@ function Section(props) {
     addRemove,
   } = props;
 
-  function renderItem(item, itemIndex, section) {
-    let divs = [];
-    // item.forEach((element, idx) => {
-
-    for (let element in item) {
-      const id = item[element]["id"];
-      if (item[element]["type"] === "textarea") {
-        divs.push(
-          <Form.Group className="mb-3">
-            <Form.Label
-              key={"label-" + itemIndex + id}
-              id={"label-" + itemIndex + id}
-              // htmlFor={id}
-            >
-              {item[element]["name"]}
-            </Form.Label>
-            <Form.Control
-              key={"input-" + itemIndex + id}
-              id={"input-" + itemIndex + id}
-              name={id}
-              as={item[element]["type"]}
-              defaultValue={item[element]["value"]}
-              onChange={(e) => handleChange(e, section, itemIndex, id)}
-            ></Form.Control>
-          </Form.Group>
-        );
-      } else {
-        divs.push(
-          <Form.Group className="mb-3">
-            <Form.Label
-              key={"label-" + itemIndex + id}
-              id={"label-" + itemIndex + id}
-              // htmlFor={id}
-            >
-              {item[element]["name"]}
-            </Form.Label>
-            <Form.Control
-              key={"input-" + itemIndex + id}
-              id={"input-" + itemIndex + id}
-              name={id}
-              type={item[element]["type"]}
-              defaultValue={item[element]["value"]}
-              onChange={(e) => handleChange(e, section, itemIndex, id)}
-            ></Form.Control>
-          </Form.Group>
-        );
-      }
-    }
-    console.log("renderItem done");
-    return divs;
-  }
-
   return (
     <Form className="Section" onSubmit={(e) => e.preventDefault()}>
       <h2 className="mt-5">{heading}</h2>
@@ -73,7 +22,14 @@ function Section(props) {
         const id = i.id;
         return (
           <div key={id} id={id}>
-            <React.Fragment>{renderItem(item, index, section)}</React.Fragment>
+            <React.Fragment>
+              <RenderItem
+                item={item}
+                index={index}
+                section={section}
+                handleChange={handleChange}
+              ></RenderItem>
+            </React.Fragment>
             {addRemove ? (
               <Button
                 className="mb-3"
