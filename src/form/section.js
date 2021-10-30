@@ -2,18 +2,16 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import RenderItem from "./renderItem";
 
-function Section(props) {
-  const {
-    cv,
-    section,
-    sectionItem,
-    addItem,
-    removeItem,
-    handleChange,
-    heading,
-    addRemove,
-  } = props;
-
+function Section({
+  cv,
+  section,
+  sectionItem,
+  addItem,
+  removeItem,
+  handleChange,
+  heading,
+  addRemove,
+}) {
   return (
     <Form className="Section" onSubmit={(e) => e.preventDefault()}>
       <h2 className="mt-5">{heading}</h2>
