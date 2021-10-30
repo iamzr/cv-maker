@@ -2,7 +2,7 @@ function EducationItem({ education }) {
   return (
     <div>
       <div className="line1">
-        <div>{education.institute.value}</div>
+        <div className="bold">{education.institute.value}</div>
         <div className="dates">
           {new Date(education.startDate.value).toLocaleDateString("en-UK", {
             month: "short",
@@ -16,8 +16,9 @@ function EducationItem({ education }) {
         </div>
       </div>
       <div className="line3">
-        <div>{education.qual.value}</div>
-        <div>{education.grade.value}</div>
+        <div>
+          {education.qual.value} {education.grade.value}
+        </div>
       </div>
     </div>
   );
