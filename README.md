@@ -1,3 +1,7 @@
+# CV Maker
+
+Check out a live demo here: https://inspiring-roentgen-64c9fe.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
