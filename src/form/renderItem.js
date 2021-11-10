@@ -6,7 +6,7 @@ function RenderItem({ item, itemIndex, section, handleChange }) {
     const id = item[element]["id"];
     if (item[element]["type"] === "textarea") {
       divs.push(
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3" key={"group-" + itemIndex + id}>
           <Form.Label
             key={"label-" + itemIndex + id}
             id={"label-" + itemIndex + id}
@@ -26,7 +26,7 @@ function RenderItem({ item, itemIndex, section, handleChange }) {
       );
     } else {
       divs.push(
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-3" key={"group-" + itemIndex + id}>
           <Form.Label
             key={"label-" + itemIndex + id}
             id={"label-" + itemIndex + id}

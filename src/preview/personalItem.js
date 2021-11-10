@@ -1,6 +1,6 @@
 function PersonalItem({ id, element }) {
   return (
-    <div key={id} id={"preview-" + id} className="header">
+    <div key={"personal" + id} id={"personal-" + id} className="header">
       <div className="name">{element.name.value}</div>
       <div>
         {element.phone.value} | {element.email.value}
