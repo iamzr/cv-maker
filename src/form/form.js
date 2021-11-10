@@ -84,7 +84,9 @@ function Form({ cv, setCV }) {
   }
 
   function handleChange(e, section, itemIndex, id) {
-    console.log(e.target.value);
+    // console.log(e.target.value);
+    // console.log(cv[section]);
+    // console.log(itemIndex);
     setCV((cv) => {
       cv[section][itemIndex]["item"][id]["value"] = e.target.value;
       return { ...cv };

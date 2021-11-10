@@ -23,7 +23,7 @@ function Section({
             <React.Fragment>
               <RenderItem
                 item={item}
-                index={index}
+                itemIndex={index}
                 section={section}
                 handleChange={handleChange}
               ></RenderItem>
